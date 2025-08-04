@@ -13,7 +13,5 @@ export const updateTodo = async (id: string, complete: boolean): Promise<Todo> =
       }
     }).then( res => res.json());
 
-    console.log({todo})
-
     return todo;
 }

@@ -1,3 +1,4 @@
+"use client"
 import { Todo } from '../../generated/prisma/index';
 import * as api from '@/todos/helpers/todo';
 import TodoItem from './TodoItem';
