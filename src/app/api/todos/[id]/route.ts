@@ -53,7 +53,7 @@ export async function PUT(request: NextRequest, { params }: ParamsProp) {
       return NextResponse.json({message: `Todo with id ${id} doesn't exits.`});
 
     const body = await request.json();
-    const { complete, description, ...rest } = await putSchema.validate(await body);
+    const { complete, description } = await putSchema.validate(await body);
 
     const updatedTodo = await prisma.todo.update({
       where: { id },

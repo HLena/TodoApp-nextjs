@@ -44,7 +44,7 @@ const todos = [
   },
 ];
 
-export async function GET(request: Request) {
+export async function GET() {
   try {
     // Clear existing todos first
     await prisma.todo.deleteMany({});
