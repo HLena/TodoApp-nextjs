@@ -1,4 +1,4 @@
-import { CiBookmarkCheck, CiLogout } from "react-icons/ci"
+import { CiLogout } from "react-icons/ci"
 import SidebarItem from "./SidebarItem"
 import Image from "next/image"
 import Link from "next/link"

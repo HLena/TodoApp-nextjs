@@ -1,4 +1,4 @@
-import { DiVim } from "react-icons/di"
+
 import { narutoCharacters } from "./characters"
 import CharacterCard from "@/components/CharacterCard"
 import Link from "next/link"

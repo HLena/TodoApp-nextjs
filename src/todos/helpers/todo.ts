@@ -1,9 +1,9 @@
+'use server';
+
 import { Todo } from "@/generated/prisma";
 import { revalidatePath } from "next/cache";
 
 export async function updateTodo(id: string, complete: boolean): Promise<Todo> {
-  'use server';
-
   const body = { complete };
 
   try {

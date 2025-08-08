@@ -1,6 +1,6 @@
 "use client"
 import { Todo } from '../../generated/prisma/index';
-import { updateTodoAction } from '@/todos/helpers/todo';
+import { updateTodo } from '@/todos/helpers/todo';
 import TodoItem from './TodoItem';
 
 interface TodosGridProps {
@@ -12,7 +12,7 @@ export const TodosGrid = ({ todos = []}: TodosGridProps) => {
     <div className='grid gap-2 grid-cols-1 sm:grid-cols-3'>
       {
         todos.map(todo => (
-          <TodoItem key={todo.id} todo={todo} toggleTodo={updateTodoAction}/>
+          <TodoItem key={todo.id} todo={todo} toggleTodo={updateTodo}/>
         ))
       }
     </div>
