@@ -46,10 +46,8 @@ const todos = [
 
 export async function GET() {
   try {
-    // Clear existing todos first
     await prisma.todo.deleteMany({});
     
-    // Create new todos
     const createTodos = await prisma.todo.createMany({
       data: todos,
       skipDuplicates: true
