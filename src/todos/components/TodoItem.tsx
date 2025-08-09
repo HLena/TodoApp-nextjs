@@ -7,7 +7,8 @@ interface TodoItemProp{
   todo: Todo,
   toggleTodo: (id:string, complete:boolean) => Promise<Todo|void>
 }
-const TodoItem = ({todo, toggleTodo}: TodoItemProp) => {
+
+export const TodoItem = ({todo, toggleTodo}: TodoItemProp) => {
   return (
     <div className={todo.complete ? styles.todoDone: styles.todoPending }>
       <div className="flex flex-col sm:flex-row justify-start items-center gap-4">
@@ -28,5 +29,3 @@ const TodoItem = ({todo, toggleTodo}: TodoItemProp) => {
     </div>
   )
 }
-
-export default TodoItem
