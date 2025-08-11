@@ -1,6 +1,8 @@
+'use client';
 import { Todo } from "@/generated/prisma"
 
 import styles from '@/todos/components/TodoItem.module.css';
+import { startTransition, useOptimistic } from "react";
 import { IoCheckboxOutline, IoSquareOutline } from "react-icons/io5";
 
 interface TodoItemProp{
@@ -9,21 +11,37 @@ interface TodoItemProp{
 }
 
 export const TodoItem = ({todo, toggleTodo}: TodoItemProp) => {
+
+  const [todoOptimistic, toggleTodoOptimistic ] = useOptimistic(todo,
+    (value, newCompleteValue: boolean) => ({ ...value, complete: newCompleteValue })
+  );
+
+  const onToggleTodo = async() => {
+    try {
+      startTransition(() => toggleTodoOptimistic(!todoOptimistic.complete));
+      await toggleTodo(todoOptimistic.id, !todoOptimistic.complete);
+    } catch (error) {
+      startTransition(() => toggleTodoOptimistic(!todoOptimistic.complete));
+    }
+  }
+
   return (
-    <div className={todo.complete ? styles.todoDone: styles.todoPending }>
+    <div className={todoOptimistic.complete ? styles.todoDone: styles.todoPending }>
       <div className="flex flex-col sm:flex-row justify-start items-center gap-4">
         <div 
           className="flex p-2 rounded-md cursor-pointer" 
-          onClick={ () => toggleTodo(todo.id, !todo.complete)}
+          // onClick={ () => toggleTodo(todoOptimistic.id, !todoOptimistic.complete)}
+          onClick={onToggleTodo}
+
         >
           {
-            todo.complete
+            todoOptimistic.complete
             ? <IoCheckboxOutline size={30}/>
             : <IoSquareOutline size={30}/>
           }
         </div>
         <div className="text-center sm:text:left">
-          {todo.description}
+          {todoOptimistic.description}
         </div>
       </div>
     </div>

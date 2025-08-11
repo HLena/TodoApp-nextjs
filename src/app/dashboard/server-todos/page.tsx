@@ -15,6 +15,7 @@ const RestTodos = async () => {
   
   return (
     <>
+      <h1 className="text-xl text-center font-bold mb-4">Server Todos</h1>
       <div className="mb-4">
         <NewTodo/>
       </div>

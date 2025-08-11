@@ -1,6 +1,5 @@
 
 import { Todo } from "@/generated/prisma";
-// import { revalidatePath } from "next/cache";
 
 export async function updateTodo(id: string, complete: boolean): Promise<Todo> {
   const body = { complete };
@@ -19,7 +18,6 @@ export async function updateTodo(id: string, complete: boolean): Promise<Todo> {
       throw new Error(`Failed to update the todo with the id: ${id}`);
     }
 
-    // revalidatePath('/dashboard/rest-todos');
 
     return await response.json();
     
@@ -66,7 +64,6 @@ export async function deleteCompletedTodos(): Promise<void> {
         'Content-Type': 'application/json'
       }
     })
-    // revalidatePath('/dashboard/rest-todos');
 
     return await response.json();
   } catch (error) {
