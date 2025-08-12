@@ -2,7 +2,7 @@ import { CiLogout } from "react-icons/ci"
 import SidebarItem from "./SidebarItem"
 import Image from "next/image"
 import Link from "next/link"
-import { IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOutline, IoListOutline } from "react-icons/io5"
+import { IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOutline, IoListOutline, IoLogoXbox } from "react-icons/io5"
 
 const sidebarOptions = [
   {
@@ -24,6 +24,11 @@ const sidebarOptions = [
     title: 'Cookies',
     icon: <IoCodeWorkingOutline size={30} />,
     href: '/dashboard/cookies'
+  },
+  {
+    title: 'Products',
+    icon: <IoLogoXbox size={30} />,
+    href: '/dashboard/products'
   }
 ]
 
