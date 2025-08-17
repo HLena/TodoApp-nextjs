@@ -13,9 +13,12 @@
     "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
-    "@prisma/client": "^6.13.0",
+    "@auth/prisma-adapter": "^2.10.0",
+    "@prisma/client": "^6.14.0",
+    "bcryptjs": "^3.0.2",
     "cookies-next": "^6.1.0",
     "next": "15.3.5",
+    "next-auth": "^4.24.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
