@@ -5,7 +5,7 @@ import { CiLogin, CiLogout } from "react-icons/ci"
 import { HiDotsHorizontal } from "react-icons/hi";
 
 const LogOutBtn = () => {
-  const { data: sesion, status } = useSession();
+  const { status } = useSession();
 
   if(status === 'loading'){
     return (

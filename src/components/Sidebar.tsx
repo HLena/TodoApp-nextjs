@@ -1,7 +1,5 @@
-import { CiLogout } from "react-icons/ci"
 import SidebarItem from "./SidebarItem"
 import Image from "next/image"
-import Link from "next/link"
 import { IoCalendarOutline, IoCheckboxOutline, IoCodeWorkingOutline, IoListOutline, IoLogoXbox, IoPersonOutline } from "react-icons/io5"
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
